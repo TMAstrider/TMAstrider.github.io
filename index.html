@@ -1,4 +1,116 @@
 ---
-layout: home
-# Index page
+layout: page
+# The home page - personal landing page + latest blog posts
 ---
+
+<div class="hero-section">
+  <h1>潘鑫 <span style="font-size: 0.6em; color: var(--text-muted-color);">Pan Xin</span></h1>
+  <p class="hero-subtitle">AI / 3D Graphics Researcher</p>
+  <p class="hero-desc">
+    中国科学院大学 人工智能硕士 · 研究方向：<strong>3D 图形学、点云重建、神经渲染</strong>
+  </p>
+  <div class="hero-links">
+    <a href="https://github.com/TMAstrider" target="_blank" rel="noopener">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://github.com/TMAstrider/paper_read" target="_blank" rel="noopener">
+      <i class="far fa-file-alt"></i> Paper Notes
+    </a>
+    <a href="mailto:2672318265@qq.com">
+      <i class="far fa-envelope"></i> Email
+    </a>
+  </div>
+</div>
+
+<hr>
+
+<h2 class="mt-4"><i class="far fa-newspaper"></i> 最新文章 / Latest Posts</h2>
+
+{% if site.posts.size > 0 %}
+  <div class="post-list">
+    {% for post in site.posts limit: 10 %}
+      <article class="post-item">
+        <h3>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <div class="post-meta">
+          <span><i class="far fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</span>
+          {% if post.categories.size > 0 %}
+            <span>
+              <i class="far fa-folder-open"></i>
+              {% for cat in post.categories %}
+                <a href="/categories/{{ cat | slugify }}/">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </span>
+          {% endif %}
+        </div>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncatewords: 50 }}</p>
+      </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="text-muted">还没有文章，敬请期待 🚧</p>
+{% endif %}
+
+<style>
+.hero-section {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+}
+.hero-section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted-color);
+  margin-bottom: 0.8rem;
+}
+.hero-desc {
+  font-size: 0.95rem;
+  max-width: 500px;
+  margin: 0 auto 1.2rem auto;
+  line-height: 1.6;
+}
+.hero-links {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.hero-links a:hover {
+  background: var(--sidebar-bg);
+  text-decoration: none;
+}
+.post-list {
+  margin-top: 1rem;
+}
+.post-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.post-item h3 {
+  margin-bottom: 0.3rem;
+}
+.post-item h3 a {
+  color: var(--heading-color);
+}
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+</style>
