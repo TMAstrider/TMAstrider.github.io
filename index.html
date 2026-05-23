@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="潘鑫 (Pan Xin) - AI / 3D Graphics Researcher">
     <title>潘鑫 Pan Xin</title>
     <style>
         :root {
@@ -12,9 +11,7 @@
             --text: #1a1a2e;
             --text-light: #6b7280;
             --accent: #2563eb;
-            --accent-light: #dbeafe;
             --border: #e5e7eb;
-            --tag: #f3f4f6;
         }
         @media (prefers-color-scheme: dark) {
             :root {
@@ -23,9 +20,7 @@
                 --text: #e2e8f0;
                 --text-light: #94a3b8;
                 --accent: #60a5fa;
-                --accent-light: #1e3a5f;
                 --border: #334155;
-                --tag: #334155;
             }
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,101 +30,22 @@
             color: var(--text);
             line-height: 1.6;
         }
-        .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+        .container { max-width: 600px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* Header */
         header {
-            padding: 3rem 0 2rem;
+            padding: 4rem 0 1.5rem;
             text-align: center;
         }
-        header h1 { font-size: 2rem; font-weight: 700; }
-        header .subtitle { color: var(--text-light); margin-top: 0.3rem; font-size: 1rem; }
-        header .tagline {
-            margin-top: 0.8rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
+        header h1 { font-size: 1.8rem; font-weight: 700; }
+        header .sub { color: var(--text-light); margin-top: 0.3rem; font-size: 0.95rem; }
 
-        /* Nav */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 1rem 0 2rem;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        nav a:hover { color: var(--accent); }
+        .section { margin-bottom: 2rem; }
 
-        /* Section */
-        section { margin-bottom: 2.5rem; }
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-light);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Paper notes */
-        .paper-list { display: flex; flex-direction: column; gap: 0.6rem; }
-        .paper-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.6rem 0.8rem;
-            background: var(--card);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            transition: transform 0.15s;
-        }
-        .paper-item:hover { transform: translateX(4px); }
-        .paper-title { font-size: 0.9rem; font-weight: 500; }
-        .paper-venue {
-            font-size: 0.75rem;
-            color: var(--accent);
-            background: var(--accent-light);
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-        .paper-links { display: flex; gap: 0.5rem; flex-shrink: 0; margin-left: 0.5rem; }
-        .paper-links a {
-            font-size: 0.75rem;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-        .paper-links a:hover { color: var(--accent); }
-        .paper-meta {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* About */
-        .bio-card {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 1.2rem 1.5rem;
-            border: 1px solid var(--border);
-        }
-        .bio-card p { margin-bottom: 0.6rem; font-size: 0.95rem; }
-        .bio-card .highlight { color: var(--accent); font-weight: 500; }
-
-        /* Links */
         .links {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
         }
         .links a {
             display: inline-flex;
@@ -149,17 +65,18 @@
             color: var(--accent);
         }
 
-        /* Footer */
+        .desc {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+        }
+
         footer {
             text-align: center;
             padding: 2rem 0;
             color: var(--text-light);
             font-size: 0.8rem;
-        }
-
-        @media (max-width: 480px) {
-            .paper-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
-            .paper-meta { width: 100%; justify-content: space-between; }
         }
     </style>
 </head>
@@ -167,141 +84,14 @@
     <div class="container">
         <header>
             <h1>潘鑫</h1>
-            <div class="subtitle">Pan Xin</div>
-            <div class="tagline">AI / 3D Graphics · 中国科学院大学</div>
+            <div class="sub">Pan Xin · AI / 3D Graphics</div>
         </header>
 
-        <nav>
-            <a href="#about">关于</a>
-            <a href="#papers">论文笔记</a>
-            <a href="#contact">联系</a>
-        </nav>
+        <div class="desc">
+            中国科学院大学 人工智能硕士 · 3D 图形学 / 点云重建
+        </div>
 
-        <!-- About -->
-        <section id="about">
-            <div class="section-title">👋 关于我</div>
-            <div class="bio-card">
-                <p>中国科学院大学 <span class="highlight">人工智能</span> 硕士在读</p>
-                <p>研究方向：<span class="highlight">3D 图形学</span> · 点云重建 · 神经渲染</p>
-                <p style="margin-bottom: 0;">目前在 <span class="highlight">中国科学院软件研究所</span> 从事点云非流形 Mesh 重建研究，同时在 <span class="highlight">腾讯</span> 参与多视角数字人生成项目。</p>
-            </div>
-        </section>
-
-        <!-- Paper Notes -->
-        <section id="papers">
-            <div class="section-title">📝 论文笔记</div>
-            <div class="paper-list">
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">SyncDreamer</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">Generating Multiview-consistent Images from a Single-view Image</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">ICLR 2024 🎯</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2309.03453" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">Zero-1-to-3</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">Zero-shot One Image to 3D Object</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">ICCV 2023 🎯</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2303.11328" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">Shap-E</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">Generating Conditional 3D Implicit Functions</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">OpenAI 2023</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2305.02463" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">Point-E</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">A System for Generating 3D Point Clouds from Complex Prompts</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">OpenAI 2022</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2212.08751" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">DiffRF</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">Rendering-Guided 3D Radiance Field Diffusion</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">CVPR 2023 🎯</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2212.01206" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">RODIN</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">A Generative Model for Sculpting 3D Digital Avatars</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">CVPR 2023 🎯</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2212.06135" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">Functa</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">From Data to Functa</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">Dupont et al. 2022</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2201.12204" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="paper-item">
-                    <div>
-                        <div class="paper-title">Transformers as Meta-Learners for INR</div>
-                        <div style="font-size:0.8rem;color:var(--text-light);">Learning Implicit Neural Representations via Transformer</div>
-                    </div>
-                    <div class="paper-meta">
-                        <span class="paper-venue">ECCV 2022</span>
-                        <div class="paper-links">
-                            <a href="https://arxiv.org/abs/2208.02801" target="_blank">arXiv</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Links -->
-        <section id="contact">
-            <div class="section-title">🔗 链接</div>
+        <div class="section">
             <div class="links">
                 <a href="https://github.com/TMAstrider" target="_blank">
                     <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -316,10 +106,10 @@
                     Email
                 </a>
             </div>
-        </section>
+        </div>
 
         <footer>
-            © 2026 潘鑫 Pan Xin · Built with ❤️
+            © 2026 潘鑫
         </footer>
     </div>
 </body>
